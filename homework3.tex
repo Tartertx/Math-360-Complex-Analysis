@@ -1,0 +1,90 @@
+\documentclass[12 pt]{article}        	%sets the font to 12 pt and says this is an article (as opposed to book or other documents)
+\usepackage{amsfonts, amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{float}
+
+\usepackage[left=2cm,right=2.5cm,top=2cm,bottom=1.5cm]{geometry}
+
+\pagestyle{myheadings}
+
+\newcommand{\eqn}[0]{\begin{array}{rcl}}%begin an aligned equation - allows for aligning = or inequalities.  Always use with $$ $$
+\newcommand{\eqnend}[0]{\end{array} }  	%end the aligned equation
+
+\newcommand{\qed}[0]{$\square$}
+
+% personalized commands
+\newcommand{\inv}{^{-1}}
+\newcommand{\bij}{\mathrlap{\hookrightarrow}\rightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\z}{\mathbb Z}
+\newcommand{\real}{\mathbb R}
+\newcommand{\q}{\mathbb Q}
+\newcommand{\complex}{\mathbb C}
+\newcommand{\n}{\mathbb N}
+\newcommand{\cont}{\lightning}
+\newcommand{\osub}{\stackrel{\circ}{\subset}}
+
+
+\usepackage{amsthm} % Recommended for theorem-like environments
+\newtheorem{thm}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{prop}{Proposition}
+\newtheorem{ex}{Example}
+
+\title{Math 360 Homework 3}
+\begin{document}
+\maketitle
+\begin{center}
+    Timothy Tarter
+
+    James Madison University
+
+    Department of Mathematics
+\end{center}
+
+\section*{Problem 1: Find a value of z for which $1^z \neq 1$.}
+Recall that 
+\begin{equation}
+    log(z) = log_e|z|+i(Arg(z)+2k\pi)
+\end{equation}
+and
+\begin{equation}
+    z^c = exp(clog(z)).
+\end{equation}
+Then
+\begin{align}
+    (1+0i)^c &= exp(c[log_e|1|+i(Arg(1+0i)+2k\pi)])\\
+    &=exp(ic(Arg(1+0i)+2k\pi))\\
+    &=e^{ic(0+2k\pi)}.
+\end{align}
+Then
+\begin{equation}
+    2cik\pi \neq 0.
+\end{equation}
+So letting $c=a+bi$,
+\begin{equation}
+    (a+bi)(2i\pi k) = -2b\pi k+i(2a\pi k).
+\end{equation}
+(7) is nonzero for any nonzero $b$ and $a \in \z$.
+
+
+\section*{Problem 2: Explain why $sin(z)$ and $cos(z)$ are unbounded as complex functions.}
+Recall that 
+\begin{equation}
+    cos(z) = \frac{e^{iz}+e^{-iz}}{2}
+\end{equation}
+and
+\begin{equation}
+    sin(z) = \frac{e^{iz}-e^{-iz}}{2}.
+\end{equation}
+
+\begin{equation}
+\end{equation}
+
+
+\section*{Problem 3: Prove that $cos(2z) = cos^2(z) - sin^2(z)$ holds for any $z\in \complex$.}
+\section*{Problem 4: Find all values of $z$ which satisfy $log(z) = \frac{i\pi}{4}$.}
+
+\end{document}
