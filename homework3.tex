@@ -45,7 +45,7 @@
 \end{center}
 
 \section*{Problem 1: Find a value of z for which $1^z \neq 1$.}
-Recall that 
+Note that we must not use the Principal log, otherwise $1^z \cong 1$. Thus, recall that 
 \begin{equation}
     log(z) = log_e|z|+i(Arg(z)+2k\pi)
 \end{equation}
@@ -67,24 +67,77 @@ So letting $c=a+bi$,
 \begin{equation}
     (a+bi)(2i\pi k) = -2b\pi k+i(2a\pi k).
 \end{equation}
-(7) is nonzero for any nonzero $b$ and $a \in \z$.
+(7) is nonzero for any nonzero $b$ and $a \in \z$. So any $z = a+bi$ where $a\in \z$ and $b \neq 0 \subseteq \real$ will work. 
 
 
 \section*{Problem 2: Explain why $sin(z)$ and $cos(z)$ are unbounded as complex functions.}
 Recall that 
 \begin{equation}
+    cos(z) = \frac{e^{iz}+e^{-iz}}{2}= \frac{e^{-b+ai}+e^{b-ai}}{2}=\frac{1}{2}\left[ e^{-b}(cos(a)+isin(a)) + e^b (cos(a) - isin(a)) \right]
+\end{equation}
+and
+\begin{equation}
+    sin(z) = \frac{e^{iz}-e^{-iz}}{2i} = \frac{e^{-b+ai}-e^{b-ai}}{2i}=  \frac{1}{2i}\left[ e^{-b}(cos(a)+isin(a)) - e^b (cos(a) - isin(a)) \right].
+\end{equation}
+
+$\newline$
+Then we can take the limit as $b \to \pm\infty$ and get:
+\begin{align}
+    \lim_{b\to \infty}\frac{1}{2}\left[ e^{-b}(cos(a)+isin(a)) + e^b (cos(a) - isin(a)) \right] = \frac{1}{2}e^\infty(cos(a)-isin(a)) =\infty \\
+    \lim_{b\to \infty} \frac{1}{2}\left[ e^{-b}(cos(a)+isin(a)) + e^b (cos(a) - isin(a)) \right]= \frac{1}{2}e^\infty (cos(a)+isin(a)) = \infty\\
+    \lim_{b\to -\infty} \frac{1}{2i}\left[ e^{-b}(cos(a)+isin(a)) - e^b (cos(a) - isin(a)) \right] = \frac{1}{2i}e^\infty (cos(a)+isin(a)) = \infty\\
+    \lim_{b\to -\infty} \frac{1}{2i}\left[ e^{-b}(cos(a)+isin(a)) - e^b (cos(a) - isin(a)) \right] = \frac{1}{2i}e^\infty(cos(a)-isin(a)) = \infty.
+\end{align}
+So $sin(z)$ and $cos(z)$ are unbounded complex functions.
+
+
+
+\section*{Problem 3: Prove that $cos(2z) = cos^2(z) - sin^2(z)$ holds for any $z\in \complex$.}
+Recall equations (8) and (9) which say that 
+\begin{equation}
     cos(z) = \frac{e^{iz}+e^{-iz}}{2}
 \end{equation}
 and
 \begin{equation}
-    sin(z) = \frac{e^{iz}-e^{-iz}}{2}.
+    sin(z) = \frac{e^{iz}-e^{-iz}}{2i}.
 \end{equation}
+It follows then that
+\begin{align}
+    cos^2(z) &= \left[\frac{e^{iz}+e^{-iz}}{2}\right]^2 \\
+    &=\frac{1}{4}[e^{2iz}+e^{-2iz}+2e^{iz-iz}]\\
+    &=\frac{1}{4}[e^{2iz}+e^{-2iz}+2]
+\end{align}
+and
+\begin{align}
+    sin^2(z) &= \left[\frac{e^{iz}-e^{-iz}}{2i}\right]^2\\
+    &= -\frac{1}{4}[e^{2iz}+e^{-2iz}-2e^{iz-iz}]\\
+    &= -\frac{1}{4}[e^{2iz}+e^{-2iz}-2]
+\end{align}
+Then, 
+\begin{align}
+    cos^2(z) - sin^2(z) &= \frac{1}{4}[([e^{2iz}+e^{-2iz}+2])-(-[e^{2iz}+e^{-2iz}-2])]\\
+    &=\frac{1}{4}[2e^{2iz}+2e^{-2iz}+2-2]\\
+    &= \frac{e^{2iz}+e^{-2iz}}{2} \\
+    &= cos(2z)
+\end{align}
+as desired.
 
+\hfill\qed
+
+
+\section*{Problem 4: Find all values of $z$ which satisfy $Log(z) = \frac{i\pi}{4}$.}
+Recall that 
 \begin{equation}
+    Log(z) = ln|z|+iArg(z).
 \end{equation}
+Then
+\begin{align}
+    ln|z| = 0 &\Rightarrow |z| = 1\\
+    &\text{and}\\
+    iArg(z) = i\frac{\pi}{4} &\Rightarrow Arg(z) = \frac{\pi}{4}.
+\end{align}
+Notably, the only point in $\complex$ with magnitude $1$ and Argument $\frac{\pi}{4}$ is $\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i$. So $z = \frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i$.
 
 
-\section*{Problem 3: Prove that $cos(2z) = cos^2(z) - sin^2(z)$ holds for any $z\in \complex$.}
-\section*{Problem 4: Find all values of $z$ which satisfy $log(z) = \frac{i\pi}{4}$.}
 
 \end{document}
